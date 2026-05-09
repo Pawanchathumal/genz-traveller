@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
-const nextConfig = {
-  output: 'export', // Enables static HTML export
-  images: { unoptimized: true }, // Required for static sites
+const repo = "/genz-traveller";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  images: { unoptimized: true },
+  basePath: repo,
+  assetPrefix: repo,
 };
-module.exports = nextConfig;
+
 export default nextConfig;
