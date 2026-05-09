@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { withBasePath } from "@/lib/site";
 
 const stats = [
   { value: "500+", label: "Happy Clients" },
@@ -40,7 +41,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="reveal-left">
             <div className="relative rounded-2xl overflow-hidden h-96">
-              <Image src="/images/hero-bg.png" alt="Genz Traveller fleet" fill className="object-cover" />
+              <Image src={withBasePath("/images/hero-bg.png")} alt="Genz Traveller fleet" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-800/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-4">
                 <p className="text-gold-400 font-semibold font-[var(--font-heading)] text-lg">Trusted by 500+ Clients</p>

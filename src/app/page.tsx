@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { withBasePath } from "@/lib/site";
 
 const fleetPreview = [
-  { name: "Rosa Bus", seats: "26–33 Seats", img: "/images/rosa-bus.png", features: ["AC", "Reclining Seats", "Music System"], popular: true },
-  { name: "Dolphin Van", seats: "8–14 Seats", img: "/images/dolphin-van.png", features: ["AC / Non-AC", "Adjustable Seats", "Luggage Space"], popular: false },
-  { name: "Luxury Car", seats: "3–4 Seats", img: "/images/luxury-car.png", features: ["AC", "Airport Transfer", "Leather Interior"], popular: false },
-  { name: "Wedding Car", seats: "Premium", img: "/images/wedding-car.png", features: ["Decorated", "Chauffeur", "Red Carpet"], popular: false },
+  { name: "Rosa Bus", seats: "26–33 Seats", img: withBasePath("/images/rosa-bus.png"), features: ["AC", "Reclining Seats", "Music System"], popular: true },
+  { name: "Dolphin Van", seats: "8–14 Seats", img: withBasePath("/images/dolphin-van.png"), features: ["AC / Non-AC", "Adjustable Seats", "Luggage Space"], popular: false },
+  { name: "Luxury Car", seats: "3–4 Seats", img: withBasePath("/images/luxury-car.png"), features: ["AC", "Airport Transfer", "Leather Interior"], popular: false },
+  { name: "Wedding Car", seats: "Premium", img: withBasePath("/images/wedding-car.png"), features: ["Decorated", "Chauffeur", "Red Carpet"], popular: false },
 ];
 
 const services = [
@@ -39,10 +40,10 @@ const testimonials = [
 ];
 
 const destinations = [
-  { name: "Kandy", desc: "Temple of the Tooth & Culture", img: "/images/ella-bridge.png" },
-  { name: "Ella", desc: "Nine Arches & Tea Plantations", img: "/images/ella-bridge.png" },
-  { name: "Nuwara Eliya", desc: "Little England & Hill Country", img: "/images/ella-bridge.png" },
-  { name: "Sigiriya", desc: "Ancient Rock Fortress", img: "/images/ella-bridge.png" },
+  { name: "Kandy", desc: "Temple of the Tooth & Culture", img: withBasePath("/images/ella-bridge.png") },
+  { name: "Ella", desc: "Nine Arches & Tea Plantations", img: withBasePath("/images/ella-bridge.png") },
+  { name: "Nuwara Eliya", desc: "Little England & Hill Country", img: withBasePath("/images/ella-bridge.png") },
+  { name: "Sigiriya", desc: "Ancient Rock Fortress", img: withBasePath("/images/ella-bridge.png") },
 ];
 
 export default function HomePage() {
@@ -53,7 +54,7 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/hero-bg.png" alt="Premium transport" fill className="object-cover" priority />
+          <Image src={withBasePath("/images/hero-bg.png")} alt="Premium transport" fill className="object-cover" priority />
           <div className="absolute inset-0 gradient-hero" />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-800 via-transparent to-transparent" />
         </div>

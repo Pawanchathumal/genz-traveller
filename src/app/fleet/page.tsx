@@ -3,18 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { withBasePath } from "@/lib/site";
 
 const vehicles = [
-  { name: "Rosa Bus (AC)", seats: "26–33 Seats", img: "/images/rosa-bus.png", features: ["Air Conditioned", "Reclining Seats", "Music System", "Luggage Compartment"], price: "From LKR 35,000/day", popular: true, category: "Bus" },
-  { name: "Rosa Bus (Non-AC)", seats: "26–33 Seats", img: "/images/rosa-bus.png", features: ["Non-AC", "Comfortable Seats", "Music System", "Luggage Space"], price: "From LKR 25,000/day", popular: false, category: "Bus" },
-  { name: "Luxury Coach", seats: "40–55 Seats", img: "/images/rosa-bus.png", features: ["Full AC", "Push-back Seats", "TV/DVD", "Washroom"], price: "From LKR 55,000/day", popular: false, category: "Bus" },
-  { name: "Dolphin Van (AC)", seats: "8–10 Seats", img: "/images/dolphin-van.png", features: ["Air Conditioned", "Adjustable Seats", "Spacious Luggage", "Tinted Glass"], price: "From LKR 18,000/day", popular: true, category: "Van" },
-  { name: "Dolphin Van (Non-AC)", seats: "8–10 Seats", img: "/images/dolphin-van.png", features: ["Non-AC", "Comfortable Seats", "Luggage Space", "Budget Friendly"], price: "From LKR 12,000/day", popular: false, category: "Van" },
-  { name: "KDH Van (AC)", seats: "12–14 Seats", img: "/images/dolphin-van.png", features: ["Full AC", "Premium Seats", "Large Luggage Area", "USB Charging"], price: "From LKR 22,000/day", popular: false, category: "Van" },
-  { name: "Premium Sedan", seats: "3–4 Seats", img: "/images/luxury-car.png", features: ["Full AC", "Leather Interior", "GPS Navigation", "Airport Transfer"], price: "From LKR 8,000/day", popular: false, category: "Car" },
-  { name: "Luxury SUV", seats: "5–7 Seats", img: "/images/luxury-car.png", features: ["Full AC", "Premium Interior", "4WD Available", "Chauffeur Driven"], price: "From LKR 15,000/day", popular: false, category: "Car" },
-  { name: "Wedding Car", seats: "Premium", img: "/images/wedding-car.png", features: ["Fully Decorated", "Professional Chauffeur", "Red Carpet Service", "Photo Session"], price: "Custom Quote", popular: true, category: "Special" },
-  { name: "Cargo Lorry", seats: "Goods Transport", img: "/images/hero-bg.png", features: ["Various Sizes", "Covered/Open", "Loading Help", "Island-wide"], price: "From LKR 15,000", popular: false, category: "Logistics" },
+  { name: "Rosa Bus (AC)", seats: "26–33 Seats", img: withBasePath("/images/rosa-bus.png"), features: ["Air Conditioned", "Reclining Seats", "Music System", "Luggage Compartment"], price: "From LKR 35,000/day", popular: true, category: "Bus" },
+  { name: "Rosa Bus (Non-AC)", seats: "26–33 Seats", img: withBasePath("/images/rosa-bus.png"), features: ["Non-AC", "Comfortable Seats", "Music System", "Luggage Space"], price: "From LKR 25,000/day", popular: false, category: "Bus" },
+  { name: "Luxury Coach", seats: "40–55 Seats", img: withBasePath("/images/rosa-bus.png"), features: ["Full AC", "Push-back Seats", "TV/DVD", "Washroom"], price: "From LKR 55,000/day", popular: false, category: "Bus" },
+  { name: "Dolphin Van (AC)", seats: "8–10 Seats", img: withBasePath("/images/dolphin-van.png"), features: ["Air Conditioned", "Adjustable Seats", "Spacious Luggage", "Tinted Glass"], price: "From LKR 18,000/day", popular: true, category: "Van" },
+  { name: "Dolphin Van (Non-AC)", seats: "8–10 Seats", img: withBasePath("/images/dolphin-van.png"), features: ["Non-AC", "Comfortable Seats", "Luggage Space", "Budget Friendly"], price: "From LKR 12,000/day", popular: false, category: "Van" },
+  { name: "KDH Van (AC)", seats: "12–14 Seats", img: withBasePath("/images/dolphin-van.png"), features: ["Full AC", "Premium Seats", "Large Luggage Area", "USB Charging"], price: "From LKR 22,000/day", popular: false, category: "Van" },
+  { name: "Premium Sedan", seats: "3–4 Seats", img: withBasePath("/images/luxury-car.png"), features: ["Full AC", "Leather Interior", "GPS Navigation", "Airport Transfer"], price: "From LKR 8,000/day", popular: false, category: "Car" },
+  { name: "Luxury SUV", seats: "5–7 Seats", img: withBasePath("/images/luxury-car.png"), features: ["Full AC", "Premium Interior", "4WD Available", "Chauffeur Driven"], price: "From LKR 15,000/day", popular: false, category: "Car" },
+  { name: "Wedding Car", seats: "Premium", img: withBasePath("/images/wedding-car.png"), features: ["Fully Decorated", "Professional Chauffeur", "Red Carpet Service", "Photo Session"], price: "Custom Quote", popular: true, category: "Special" },
+  { name: "Cargo Lorry", seats: "Goods Transport", img: withBasePath("/images/hero-bg.png"), features: ["Various Sizes", "Covered/Open", "Loading Help", "Island-wide"], price: "From LKR 15,000", popular: false, category: "Logistics" },
 ];
 
 export default function FleetPage() {
